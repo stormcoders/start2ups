@@ -1,0 +1,97 @@
+
+body {
+  font-family: 'Titillium Web', Arial, sans-serif;
+	padding: 0; /* Gets rid of the automatic padding */
+	margin: 0;	/*	on HTML documents */
+	font-size: 16px;
+  margin-top: 110px;
+  background-color: #F4F3F3;
+}
+
+#navigation {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  color: #ffffff;
+  height: 60px;
+  text-align: center;
+  padding-top: 50px;
+  /* Adds shadow to the bottom of the bar */
+  -webkit-box-shadow: 0px 0px 8px 0px #000000;
+  -moz-box-shadow: 0px 0px 8px 0px #000000;
+  box-shadow: 0px 0px 8px 0px #000000;
+  /* Adds the transparent background */
+  background-color: rgba(33, 67, 89, 0.8);
+  color: rgba(1, 1, 1, 0.8);
+  z-index: 999;
+}
+
+#navigation a {
+	font-size: 24px;
+	padding-left: 15px;
+	padding-right: 15px;
+	color: white;
+	text-decoration: none;
+}
+
+#navigation a:hover {
+  color: #90CF1D;
+}
+
+#content img {
+	padding-top: 20px;
+	padding-bottom: 30px;
+}
+
+#navigation a.logo {
+  font-size: 40px;
+  font-weight: bold;
+  color: #F4F3F3;
+}
+
+.logo .char1 {
+}
+
+.logo .char6 {
+  color: #90CF1D;
+  font-size: 28px;
+  position: relative; 
+  top: -15px;
+  font-weight: bold;
+}
+
+.slogan {
+  font-size: 40px;
+  text-align: center;
+  padding-top: 10px;
+}
+
+.container {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.pcenter {
+  text-align: center;
+}
+
+.pright {
+  text-align: right;
+}
+
+.footer {
+  background-color: rgba(33, 67, 89, 1);
+  padding-top: 30px;
+  padding-bottom: 30px;
+  color: #F4F3F3;
+}
+
+.footer a {
+  color: #F4F3F3;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: #90CF1D;
+  text-decoration: none;
+}
