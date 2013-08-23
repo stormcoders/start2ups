@@ -63,7 +63,26 @@ body {
 .slogan {
   font-size: 40px;
   text-align: center;
+  padding-top: 40px;
+  margin: 0;
+  color: #F26730;
+}
+
+.subslogan {
+  font-size: 20px;
+  text-align: center;
+  margin: 0;
   padding-top: 10px;
+  margin-bottom: 50px;
+  color: #000000;
+}
+
+.span4 h4 {
+  color: #F26730;
+}
+
+h2 {
+  color: #F26730; 
 }
 
 .container {
