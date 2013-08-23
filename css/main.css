@@ -8,6 +8,16 @@ body {
   background-color: #F4F3F3;
 }
 
+a {
+  color: #F26730;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #F26730;
+  text-decoration: none;
+}
+
 #navigation {
   position: fixed;
   top: 0;
@@ -100,6 +110,7 @@ h2 {
 
 .footer {
   background-color: rgba(33, 67, 89, 1);
+  margin-top: 40px;
   padding-top: 30px;
   padding-bottom: 30px;
   color: #F4F3F3;
