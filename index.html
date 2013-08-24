@@ -214,10 +214,13 @@
 </div>
 
   <script>
+
+    function replaceAll(find, replace, str) {
+      return str.replace(new RegExp(find, 'g'), replace);
+    }
+
     $(document).ready(function() {
       $(".logo").lettering();
-
-      var myRootRef = new Firebase('https://start2ups.firebaseio.com');
       
       $("#btnOK").on("click", function() {
         var name = $("#inputName").val();
@@ -225,12 +228,13 @@
         var conheceu = $("#inputConheceu").val();
         var ideia = $("#inputIdeia").val();
         if (name !== "" && email !== "" && conheceu !== "" && ideia !== "") {
-          obj = {}
-          obj[email] = {"nome" : name, "conheceu" : conheceu, "ideia": ideia }
-          myRootRef.set(obj)
+          var myRootRef = new Firebase('https://start2ups.firebaseio.com/' + encodeURI(replaceAll("\\.", "*", email)) );
+          myRootRef.set({"nome" : name, "email" : email, "conheceu" : conheceu, "ideia": ideia })
+          $('#promoModal').modal("hide");
         }
-        else
+        else {
           alert("Por favor, preencha todos os campos.");
+        }
       })
 
     });
