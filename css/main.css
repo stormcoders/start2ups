@@ -149,6 +149,30 @@ h2 {
   font-size: 30px;
 }
 
+.promocao {
+  float: right;
+  position: relative;
+  top: -110px;
+  background-image: url(../img/promo.png);
+  width: 200px;
+  height: 200px;
+  z-index: 9999;
+}
+
+.promocao .promo-txt {
+  text-align: center;
+  margin-top: 90px;
+  font-size: 36px;
+  transform: rotate(-30deg);
+  -webkit-transform: rotate(-30deg);
+  -moz-transform: rotate(-30deg);
+  -o-transform: rotate(-30deg);
+}
+
+.promo-link {
+  color: #1B4659;
+}
+
 @media screen and (max-width: 950px) {
   #navigation a {
     font-size: 23px;
@@ -175,6 +199,27 @@ h2 {
 
   .span6 {
     margin-bottom: 20px; 
+  }
+
+  .promocao {
+    float: none;
+    position: relative;
+    top: 30px;
+    background-image: none;
+    background-color: #ffcc00;
+    width: auto;
+    height: 50px; 
+    z-index: -1;
+  }
+
+  .promocao .promo-txt {
+    text-align: center;
+    font-size: 36px;
+    padding-top: 12px;  
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
   }
 }
 

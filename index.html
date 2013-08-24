@@ -19,6 +19,8 @@
   <script src="js/jquery.lettering-0.6.1.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
 
+  <script type='text/javascript' src='https://cdn.firebase.com/v0/firebase.js'></script>
+
   <link href='http://fonts.googleapis.com/css?family=Titillium+Web:300' rel='stylesheet' type='text/css'>
 </head>
 
@@ -30,6 +32,10 @@
 		<a href="http://stormcoders.com.br">Blog</a>
     <a href="mailto:contato@stormcoders.com.br">Contato</a>
 	</div>
+
+  <a href="#promoModal" class="promo-link" data-toggle="modal"><div class="promocao">
+      <div class="promo-txt">Promoção</div>
+    </div></a>
 
   <div class="container">
     <h1 class="slogan">Sua solução web ou mobile em 1 semana</h1>
@@ -73,6 +79,7 @@
         <div class="plan">
           <h1>Web</h1>
           <h2>R$ 7mil</h2>
+          <p>Em uma semana:</p>
           <p>1 reunião</p>
           <p>Design da interface</p>
           <p>Desenvolvimento do site</p>
@@ -83,6 +90,7 @@
         <div class="plan">
           <h1>Mobile</h1>
           <h2>R$ 10mil</h2>
+          <p>Em uma semana:</p>
           <p>1 reunião</p>
           <p>Design da interface</p>
           <p>Desenvolvimento do aplicativo</p>
@@ -153,9 +161,78 @@
   </div>
 </div>
 
+<div id="promoModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">Ganhe até 100% de desconto!</h3>
+  </div>
+  <div class="modal-body">
+    <p>Para comemorar o lançamento sortearemos 3 prêmios:</p>
+    <ul>
+      <li>1 desconto de 100% (web ou mobile)</li>
+      <li>2 descontos de 50% (web ou mobile)</li>
+    </ul>
+    <p>Cadastre-se agora!</p>
+    <form class="form-horizontal">
+      <div class="control-group">
+        <label class="control-label" for="inputEmail">Nome</label>
+        <div class="controls">
+          <input type="text" id="inputName">
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label" for="inputEmail">Email</label>
+        <div class="controls">
+          <input type="text" id="inputEmail">
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label" for="inputEmail">Como nos conheceu?</label>
+        <div class="controls">
+          <select id="inputConheceu">
+            <option></option>
+            <option>Startup Weekend</option>
+            <option>RubyConf</option>
+            <option>Indicação</option>
+            <option>Ferramenta de busca</option>
+            <option>Outros</option>
+          </select>
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label" for="inputEmail">Conte-nos um pouco soubre sua ideia</label>
+        <div class="controls">
+          <textarea id="inputIdeia" rows="3"></textarea>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Cancelar</button>
+    <button class="btn btn-primary" id="btnOK">Cadastrar</button>
+  </div>
+</div>
+
   <script>
     $(document).ready(function() {
       $(".logo").lettering();
+
+      var myRootRef = new Firebase('https://start2ups.firebaseio.com');
+      
+      $("#btnOK").on("click", function() {
+        var name = $("#inputName").val();
+        var email = $("#inputEmail").val();
+        var conheceu = $("#inputConheceu").val();
+        var ideia = $("#inputIdeia").val();
+        if (name !== "" && email !== "" && conheceu !== "" && ideia !== "") {
+          obj = {}
+          obj[email] = {"nome" : name, "conheceu" : conheceu, "ideia": ideia }
+          myRootRef.set(obj)
+        }
+        else
+          alert("Por favor, preencha todos os campos.");
+      })
+
     });
   </script>
 
