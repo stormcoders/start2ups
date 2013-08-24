@@ -130,6 +130,25 @@ h2 {
   text-decoration: none;
 }
 
+.plan {
+  background-color: rgba(148, 196, 70, 0.3);
+  text-align: center;
+  padding: 0px 5px 5px 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.plan h1 {
+  border-bottom: 1px solid #94C446;
+  padding: 3px;
+  font-size: 22px;
+}
+
+.plan h2 {
+  font-size: 30px;
+}
+
 @media screen and (max-width: 950px) {
   #navigation a {
     font-size: 23px;
