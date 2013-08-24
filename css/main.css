@@ -203,13 +203,12 @@ h2 {
 
   .promocao {
     float: none;
-    position: relative;
-    top: 30px;
+    position: static;
+    margin-top: 140px;
     background-image: none;
     background-color: #ffcc00;
     width: auto;
-    height: 50px; 
-    z-index: -1;
+    height: 50px;
   }
 
   .promocao .promo-txt {
