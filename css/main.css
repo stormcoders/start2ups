@@ -91,6 +91,10 @@ a:hover {
   color: #F26730;
 }
 
+.anchor {
+  padding-top: 110px;
+}
+
 h2 {
   color: #F26730; 
 }
